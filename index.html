@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff4f5">
+  <meta name="description" content="Uma surpresa de aniversário feita com carinho para Ana Júlia.">
+  <title>Uma surpresa para Ana Júlia 🌷</title>
+  <style>
+    :root {
+      --rose: #c95f7c;
+      --rose-dark: #8d3e59;
+      --pink: #ffe4eb;
+      --cream: #fffaf6;
+      --ink: #573c49;
+      --muted: #8d6c79;
+      --leaf: #7b9b78;
+      --card: rgba(255,255,255,.82);
+      --shadow: 0 18px 55px rgba(128, 65, 88, .14);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; min-height: 100vh; color: var(--ink);
+      font-family: ui-rounded, "Trebuchet MS", system-ui, -apple-system, sans-serif;
+      background:
+        radial-gradient(ellipse at 10% 10%, rgba(255,211,224,.65), transparent 36%),
+        radial-gradient(ellipse at 90% 20%, rgba(255,233,190,.55), transparent 32%),
+        linear-gradient(145deg, #fff8f7, #fff0f4 55%, #fffaf1);
+      overflow-x: hidden;
+    }
+    button { font: inherit; }
+    .petals { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 0; }
+    .petal {
+      position: absolute; top: -30px; color: #d77f98; opacity: .45;
+      animation: fall linear infinite; user-select: none;
+    }
+    @keyframes fall {
+      0% { transform: translate3d(0,-5vh,0) rotate(0deg); opacity: 0; }
+      10% { opacity: .55; }
+      90% { opacity: .45; }
+      100% { transform: translate3d(50px,110vh,0) rotate(300deg); opacity: 0; }
+    }
+    .wrap { position: relative; z-index: 1; width: min(100% - 28px, 760px); margin: 0 auto; padding: 28px 0 44px; }
+    .topline { text-align: center; color: var(--rose-dark); font-size: .82rem; letter-spacing: .15em; text-transform: uppercase; }
+    .hero { text-align: center; padding: 28px 10px 20px; }
+    .flower { font-size: clamp(3.6rem, 12vw, 6rem); display: inline-block; filter: drop-shadow(0 8px 12px #d98aa344); animation: bob 3s ease-in-out infinite; }
+    @keyframes bob { 0%,100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-8px) rotate(3deg); } }
+    h1 { font-family: Georgia, "Times New Roman", serif; font-weight: 500; font-size: clamp(2.25rem, 8vw, 4.4rem); line-height: 1.06; margin: 12px 0; color: var(--rose-dark); }
+    .subtitle { font-size: clamp(1rem, 3.5vw, 1.18rem); line-height: 1.7; max-width: 520px; margin: 0 auto; color: var(--muted); }
+    .card {
+      background: var(--card); border: 1px solid rgba(255,255,255,.9); border-radius: 28px;
+      padding: clamp(22px, 5vw, 38px); box-shadow: var(--shadow); backdrop-filter: blur(12px);
+      margin: 18px 0;
+    }
+    .eyebrow { color: var(--rose); font-size: .78rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; margin: 0 0 10px; }
+    h2 { font-family: Georgia, "Times New Roman", serif; color: var(--rose-dark); font-weight: 500; font-size: clamp(1.65rem, 6vw, 2.3rem); margin: 0 0 14px; }
+    p { line-height: 1.8; }
+    .center { text-align: center; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 24px; }
+    .btn {
+      border: 0; border-radius: 999px; padding: 14px 22px; min-height: 48px; cursor: pointer;
+      background: var(--rose); color: white; box-shadow: 0 8px 20px #c95f7c30;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 24px #c95f7c40; }
+    .btn:focus-visible { outline: 3px solid #8d3e59; outline-offset: 4px; }
+    .btn.secondary { background: #fff; color: var(--rose-dark); border: 1px solid #f0c8d3; box-shadow: none; }
+    .hidden { display: none !important; }
+    .letter { position: relative; overflow: hidden; }
+    .letter:before { content: "✿"; position: absolute; right: 18px; top: 8px; color: #e9a2b4; font-size: 2rem; opacity: .6; }
+    .letter-body { white-space: pre-line; font-size: 1.02rem; }
+    .editable-note { font-size: .82rem; color: #9c7d88; font-style: italic; }
+    .surprise { text-align: center; }
+    .reveal-heart { font-size: 3rem; animation: heartbeat 1.4s ease-in-out infinite; display: inline-block; }
+    @keyframes heartbeat { 0%,100% { transform: scale(1); } 15% { transform: scale(1.12); } 30% { transform: scale(1); } 45% { transform: scale(1.08); } }
+    .wish { font-family: Georgia, serif; font-size: clamp(1.3rem, 5vw, 1.8rem); line-height: 1.55; color: var(--rose-dark); }
+    .flower-row { font-size: 1.5rem; letter-spacing: .4rem; margin: 20px 0 4px; }
+    footer { text-align: center; color: #a1848f; font-size: .83rem; padding: 18px 10px 0; }
+    .tiny { font-size: .78rem; color: var(--muted); }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="petals" id="petals" aria-hidden="true"></div>
+  <main class="wrap">
+    <div class="topline">feito com carinho ✿ só pra você</div>
+    <header class="hero">
+      <div class="flower" aria-hidden="true">🌷</div>
+      <h1>Feliz aniversário,<br><span id="heroName">Ana Júlia</span>!</h1>
+      <p class="subtitle">Hoje é um daqueles dias que merecem um pouquinho mais de atenção, carinho e motivos pra sorrir.</p>
+      <div class="actions">
+        <button class="btn" id="openLetter">Tem uma cartinha pra você 💌</button>
+      </div>
+    </header>
+
+    <section class="card center" id="introCard">
+      <p class="eyebrow">um pequeno lembrete</p>
+      <h2>O mundo fica mais bonito com pessoas como você nele.</h2>
+      <p>Então hoje eu só queria separar um cantinho da internet pra te desejar coisas boas. Você merece um dia leve,com pessoas que te amam, cheio de sorrisos sinceros e momentos que deem vontade de guardar na memória.</p>
+      <div class="flower-row" aria-hidden="true">🌼 🌷 🌸</div>
+    </section>
+
+    <section class="card" id="curiosityCard" aria-labelledby="curiosityTitle">
+      <p class="eyebrow">uma curiosidade especial</p>
+      <h2 id="curiosityTitle">Curiosidade</h2>
+      <p>Hoje é o dia de Ada Lovelace, uma mulher extremamente importante para a computação. Graças a ela e a tantas outras pessoas, hoje é possível criar coisas como esse site. Uma mulher incrível, assim como você. ❤️</p>
+    </section>
+
+    <section class="card letter hidden" id="letterCard" aria-labelledby="letterTitle">
+      <p class="eyebrow">leia com calma</p>
+      <h2 id="letterTitle">Uma cartinha pra você</h2>
+      <div class="letter-body" id="letterText">Ana Júlia,
+
+Feliz aniversário! Espero que esse novo ciclo te traga paz, boas surpresas, muitas conquistas e vários motivos pra sorrir.
+
+Assim como uma flor, você tem seu próprio jeito de tornar o mundo um pouquinho mais bonito, simplesmente sendo quem você é. Talvez você nem perceba, mas existem qualidades em você que despertam a vontade de te conhecer cada vez mais. 🌷
+
+Enfim, não queria deixar a data passar sem te lembrar que você é uma pessoa especial. Que seu dia seja tão bonito quanto os sorrisos que você espalha.
+
+Com carinho,
+Lucas 🌷</div>
+      <div class="actions">
+        <button class="btn" id="openSurprise">Tem mais uma coisinha… ✨</button>
+        <button class="btn secondary" id="closeLetter">Fechar cartinha</button>
+      </div>
+    </section>
+
+    <section class="card surprise hidden" id="surpriseCard" aria-labelledby="surpriseTitle">
+      <div class="reveal-heart" aria-hidden="true">💗</div>
+      <p class="eyebrow">um último recadinho</p>
+      <h2 id="surpriseTitle">Queria te falar uma coisa…</h2>
+      <p class="wish">Ana, queria conversar contigo pessoalmente na escola quando você puder e se quiser claro.</p>
+      <p>Queria te falar uma coisa com calma </p>
+      <div class="flower-row" aria-hidden="true">🌸 ✨ 🌷 ✨ 🌼</div>
+      <div class="actions">
+        <button class="btn secondary" id="backToLetter">Voltar pra cartinha</button>
+        <button class="btn" id="again">Ver a surpresa de novo</button>
+      </div>
+    </section>
+
+    <footer>
+      <div>Feito especialmente para Ana Júlia ♡</div>
+      <div class="tiny">Uma surpresa simples, mas feita com carinho.</div>
+    </footer>
+  </main>
+  <script>
+    // Pétalas decorativas geradas por código: não precisa baixar imagens ou bibliotecas.
+    const petals = document.getElementById('petals');
+    const petalChars = ['✿', '❀', '✾', '♡'];
+    for (let i = 0; i < 18; i++) {
+      const p = document.createElement('span');
+      p.className = 'petal';
+      p.textContent = petalChars[i % petalChars.length];
+      p.style.left = (Math.random() * 100) + '%';
+      p.style.animationDuration = (11 + Math.random() * 13) + 's';
+      p.style.animationDelay = (-Math.random() * 20) + 's';
+      p.style.fontSize = (12 + Math.random() * 17) + 'px';
+      petals.appendChild(p);
+    }
+
+    const letter = document.getElementById('letterCard');
+    const surprise = document.getElementById('surpriseCard');
+    const intro = document.getElementById('introCard');
+    const openLetter = () => {
+      letter.classList.remove('hidden');
+      surprise.classList.add('hidden');
+      letter.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+    document.getElementById('openLetter').addEventListener('click', openLetter);
+    document.getElementById('closeLetter').addEventListener('click', () => {
+      letter.classList.add('hidden');
+      intro.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+    document.getElementById('openSurprise').addEventListener('click', () => {
+      surprise.classList.remove('hidden');
+      letter.classList.add('hidden');
+      surprise.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+    document.getElementById('backToLetter').addEventListener('click', openLetter);
+    document.getElementById('again').addEventListener('click', () => {
+      surprise.classList.add('hidden');
+      letter.classList.add('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      document.querySelector('.hero').animate(
+        [{ transform: 'scale(1)' }, { transform: 'scale(1.025)' }, { transform: 'scale(1)' }],
+        { duration: 650, easing: 'ease-out' }
+      );
+    });
+  </script>
+</body>
+</html>
